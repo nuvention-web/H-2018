@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ item.name }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addReview()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  
+
+</ion-header>
+
+
+<ion-content>
+  <img [src]="item.allergy_sheet">
+  
+
+  <div class="card-detail" padding>
+
+    <p><b>Nuts:</b> We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients. A few of our items, such as the vanilla ice cream and chocolate chip cookie dough, do not contain peanuts or tree nuts but are made in a facility where peanuts and tree nuts are present. </p>
+  </div>
+
+
+
+  <ion-list>
+    User reviews:
+    <ion-item *ngFor="let review of reviewsObservable | async">
+      
+        <ion-avatar item-start>
+          <img [src]="review.profile"/>
+          <h2>{{review.name}}</h2>
+        </ion-avatar>
+
+       
+
+        <div item-content>
+           <p style=""> {{review.details}} </p>
+          </div>
+        
+        
+          <div item-end>
+
+          </div>
+
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+

@@ -1,0 +1,37 @@
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'CARDS_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let item of cardItems" type="button" (click)="openItem(item)">
+
+    
+      <h1>{{item.name}}</h1>
+
+    <img [src]="item.profilePic">
+
+    <ion-card-content>
+      <p>{{item.about}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start (click)="size()">
+            <ion-icon name='text'></ion-icon>
+             Reviews for this Restaurant
+          </button>
+      </ion-col>
+      <ion-col center text-center>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
