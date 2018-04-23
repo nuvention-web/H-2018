@@ -1,29 +1,52 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>{{ item.name }}</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addReview()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title></ion-title>
+    </ion-navbar>
+  </ion-header>
   
+  <ion-content>
 
-</ion-header>
+        <ion-list class="accordion-list">
+          <!-- First Level -->
+          <ion-list-header *ngFor="let item of menuTypes | async; let i = index" no-lines no-padding>
+            <!-- Toggle Button -->
+            <button ion-item (click)="shower(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+              <ion-icon item-left name="arrow-forward" *ngIf="!show[i]"></ion-icon>
+              <ion-icon item-left name="arrow-down" *ngIf="show[i]"></ion-icon>
+                {{ item.type }}
+          </button>
+          
+            
+            <ion-list *ngIf="item.children && show[i]">
+                <!-- Third Level -->
+                <ion-item *ngFor="let child of item.children" detail-none class="child-item" text-wrap>
+                  <h2>{{ child.menuItem }}</h2>
+                 
+                  <!-- Direct Add Button -->
+                 
+                </ion-item>
+              </ion-list>
+    
+       
+              </ion-list-header>
+            </ion-list>
+    
 
 
-<ion-content>
-  <img [src]="item.allergy_sheet">
-  
-
-  <div class="card-detail" padding>
-
-    <p><b>Nuts:</b> We do not have any peanuts or tree nuts in our pizzerias, and all of our homemade products are made without these ingredients. A few of our items, such as the vanilla ice cream and chocolate chip cookie dough, do not contain peanuts or tree nuts but are made in a facility where peanuts and tree nuts are present. </p>
-  </div>
+          
+            </ion-content>
 
 
 
+  <!--
+    <ion-list>
+        Safe items:
+        <ion-item *ngFor="let food of menuTypes | async">
+           <button ion-button>{{food.type}}</button>
+           </ion-item>
+           </ion-list>
+          -->
+<!--
   <ion-list>
     User reviews:
     <ion-item *ngFor="let review of reviewsObservable | async">
@@ -48,6 +71,4 @@
     </ion-item>
   </ion-list>
 
-</ion-content>
-
-
+-->
