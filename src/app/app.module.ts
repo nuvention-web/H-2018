@@ -14,12 +14,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { Items } from '../mocks/providers/items';
 import { Reviews } from '../mocks/providers/reviews';
-import { Settings } from '../providers/providers';
+import { Settings} from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { environment } from './../environments/environment';
 import { CardDetailPage } from '../pages/card-detail/card-detail';
+import {AllegensProvider} from '../providers/providers';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -74,6 +75,7 @@ export function provideSettings(storage: Storage) {
     Reviews,
     SplashScreen,
     StatusBar,
+    AllegensProvider,
    
     
     
