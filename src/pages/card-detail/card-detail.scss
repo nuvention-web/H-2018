@@ -1,27 +1,37 @@
-page-item-detail {
-  .card-profile {
-    width: 100%;
-    background-position: center center;
-    background-size: cover;
-    height: 250px;
-  }
+page-card-detail {
 
-  .card-detail {
-    width: 100%;
-    background: white;
-    position: absolute;
-    
-  }
-
-  .review-items{
-    width: 100%;
-    background: bisque;
-    position: absolute;
-    
-  }
-  .test{
-   
-    font-size: 45pt;
-  
-  }
+  .accordion-list {
+    background: color($colors, light);
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
+.section {
+    background: rgb(47, 233, 78);
+    color: #000;
+    margin-bottom: 4px;
+}
+.section-active {
+    background: #ffc400;
+    color: #fff;
+}
+
+.child {
+    background: #e8e7e6;
+    color: #000;
+    margin-bottom: 4px;
+}
+.child-item {
+    background: #f3f2f1;
+    padding: 10px;
+}
+.label {
+    margin: 0px;
+}
+.list {
+    margin-bottom: 4px;
+}
+
+}
+
+
+

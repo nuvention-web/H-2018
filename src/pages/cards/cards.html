@@ -2,7 +2,7 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ 'CARDS_TITLE' | translate }}</ion-title>
+    <ion-title>Restaurants near you</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,9 +25,9 @@
         
       </ion-col>
       <ion-col>
-        <button ion-button color="primary" clear small icon-start (click)="size()">
-            <ion-icon name='text'></ion-icon>
-             Reviews for this Restaurant
+        <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='compass'></ion-icon>
+             {{item.address}}
           </button>
       </ion-col>
       <ion-col center text-center>

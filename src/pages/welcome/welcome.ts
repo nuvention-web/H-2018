@@ -20,6 +20,10 @@ export class WelcomePage {
     this.navCtrl.push('LoginPage');
   }
 
+  getStarted(){
+    this.navCtrl.push('ListPage');
+  }
+
   signup() {
     this.navCtrl.push('SignupPage');
   }
