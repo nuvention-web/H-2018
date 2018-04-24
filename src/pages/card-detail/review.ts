@@ -9,5 +9,6 @@ export class Review{
   details  = 'Ad Content'
   rating   = 5.00
   profile    = 'http://via.placeholder.com/350x150'
+  menuItem = ""
 
 }

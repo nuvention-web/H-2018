@@ -6,28 +6,22 @@ import { Item } from '../../models/item';
 export class Items {
   items: Item[] = [];
 
-  defaultItem: any = {
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "about": "Burt is a Bear.",
-  };
-
 
   constructor() {
     let items = [
       {
-        "name": "Lou Malnatis",
+        "name": "Lou Malnati's",
         "profilePic": "assets/img/catering-pizza-large.jpg",
-        "about": "Allergy info: EGG  MILK SOY	WHEAT	ONION	GARLIC CORN NUTS",
-        "allergy_sheet": "assets/img/sheet.png",
-        "data": "lous"
+        "about": "Family-owned local chain for Italian classics & Chicago-style, deep-dish pizzas with butter crusts.",
+        "data": "lous",
+        "address":"1850 Sherman Ave, Evanston, IL 60201"
       },
       {
         "name": "Chipotle",
-        "profilePic": "https://d5bzqyuki558t.cloudfront.net/cms-assets/system/asset_versions/attachments/000/000/289/original/_0000_Burrito.png?1428413134",
-        "about": "Allergy info: EGG  MILK SOY	WHEAT	ONION	GARLIC CORN NUTS",
-        "allergy_sheet": "assets/img/sheet2.png",
-        "data": "chipotle"
+        "profilePic": "https://cdn.worldvectorlogo.com/logos/chipotle-mexican-grill.svg",
+        "about": "Fast-food chain offering Mexican fare, including design-your-own burritos, tacos & bowls.",
+        "data": "chipotle",
+        "address": "711 Church St, Evanston, IL 60201"
       },
      
     ];
