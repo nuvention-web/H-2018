@@ -4,6 +4,7 @@ import { Reviews } from '../mocks/providers/reviews';
 import { Settings } from './settings/settings';
 import { User } from './user/user';
 import {AllegensProvider} from './allegens/allegens';
+import {Cart} from './cart/cart';
 
 export {
     Api,
@@ -12,5 +13,6 @@ export {
     Reviews,
     User,
     AllegensProvider,
+    Cart,
     
 };
