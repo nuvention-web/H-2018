@@ -1,5 +1,32 @@
 page-tabs {
 
-   
 
+    .section {
+        background: #ffc400;
+        color: #000;
+        
+    }
+    .section-active {
+        background: #34bb0b;
+        color: #fff;
+    }
+    
+    .child {
+        background: #e8e7e6;
+        color: #000;
+        margin-bottom: 2px;
+    }
+    .child-item {
+        background: #f3f2f1;
+        padding: 5px;
+    }
+    
+    #map {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .scroll {
+        height: 100%
+      }
 }

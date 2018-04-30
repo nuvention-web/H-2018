@@ -19,7 +19,7 @@
             
             <ion-list *ngIf="item.children && show[i]">
                 <!-- Third Level -->
-                <div *ngFor="let child of item.children" detail-none class="child-item" text-wrap>
+                <div *ngFor="let child of item.children, let j = index" detail-none class="child-item" text-wrap>
                   <ion-item *ngIf="!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
                   && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
                   && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
@@ -27,7 +27,16 @@
                   
                 
                     
-                    {{ child.menuItem }}
+                  <button ion-item (click)="addToCart(child.menuItem, i, j)">
+                      <ion-icon *ngIf="checked[i][j] == true && clear == false" name='star'> </ion-icon>
+                    
+                      {{ child.menuItem }}
+                   
+                    <ion-item *ngIf="child.desc">
+                      {{child.desc}}
+                    </ion-item>
+                    
+                    </button>
                  
                   <!-- Direct Add Button -->
                  

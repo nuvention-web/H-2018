@@ -8,6 +8,7 @@ import { Reviews } from '../../providers/providers';
 import { DataSnapshot } from '@firebase/database';
 import { HttpClient } from '@angular/common/http';
 import { AllegensProvider} from '../../providers/allegens/allegens';
+import { Cart} from '../../providers/cart/cart';
 
 
 
@@ -25,7 +26,8 @@ export class CardDetailPage {
   item: any;
   review: any;
   show: boolean[];
-  
+  checked: boolean[][];
+  clear: boolean;
  
 
 
@@ -35,9 +37,10 @@ export class CardDetailPage {
   information: any[];
   
 
-  constructor(public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
+  constructor(public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
    this.item = navParams.get('item') || reviews.defaultReview;
     this.currentReviews = this.reviews.query();
+    
     
     
   }
@@ -45,15 +48,18 @@ export class CardDetailPage {
 
    
   ngOnInit() {
-    this.show = [false, false, false];
+    this.show = [false, false, false, false, false, false];
+    this.checked = [[],[],[], [], [], [], [],[],[], [], [], [], [],[],[], [], [], []];
     this.menuTypes = this.getReviews('/' + this.item.data );
-    console.log(this.allergies.wheat);
+    this.clear = this.cart.clear;
+    console.log(this.clear);
   /*  this.db.database.ref("/lous").on("value", function(snapshot) {
       console.log(snapshot.val());
     });
 
 */
-    
+
+    this.clear = false;
 
   }
 
@@ -94,6 +100,25 @@ export class CardDetailPage {
     });
   }
 
+
+  addToCart(item, i, j) {
+
+    let fav = this.item.name + " - " + item;
+    let index = this.cart.cart.indexOf(fav);
+    //item.checked=false;
+    if (index == -1 ) {
+      this.cart.cart.push(fav);
+      this.checked[i][j] = !this.checked[i][j];
+    }
+    else{
+    this.cart.cart.splice(index, 1);
+    this.checked[i][j] = !this.checked[i][j];
+    }
+   
+   
+  }
+
+  
 
  
 

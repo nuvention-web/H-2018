@@ -1,10 +1,11 @@
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
+-->
 
 
 <ion-content>
@@ -19,4 +20,6 @@
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
   </ion-list>
+  <div #mapContainer id="map"></div>
 </ion-content>
+
