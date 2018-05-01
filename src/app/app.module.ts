@@ -21,6 +21,8 @@ import { MyApp } from './app.component';
 import { environment } from './../environments/environment';
 import { CardDetailPage } from '../pages/card-detail/card-detail';
 import {AllegensProvider} from '../providers/providers';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Cart} from '../providers/cart/cart';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -76,12 +78,14 @@ export function provideSettings(storage: Storage) {
     SplashScreen,
     StatusBar,
     AllegensProvider,
-   
+    Geolocation,
+    Cart,
     
     
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+
   ]
 })
 export class AppModule { }
