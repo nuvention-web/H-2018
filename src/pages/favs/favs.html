@@ -8,7 +8,9 @@
 
   <ion-navbar>
 
-    <ion-title>Favourites</ion-title>
+      <ion-title>
+          <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+        </ion-title>
     <ion-buttons end>
     <button ion-button icon-only (click)="clearC()">
       Clear all 
@@ -21,7 +23,8 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="card-detail-page">
+  <h1>Favorites</h1>
 
 
   <div *ngFor="let item of cart" >

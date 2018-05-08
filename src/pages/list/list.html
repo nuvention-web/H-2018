@@ -2,63 +2,65 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Allergen Info</ion-title>
+      <ion-title>
+          <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+        </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-detail-page">
 
 
-  <h2>Please select your allergens:</h2>
+  <h2>Please select the allergens you would like to avoid:</h2>
 
-    <ion-list>
+    <ion-list class="list">
 
-        <ion-item>
+        <ion-item  class="list">
           <ion-label>Peanuts</ion-label>
-          <ion-checkbox [(ngModel)]="allergies.peanuts"></ion-checkbox>
+          <ion-checkbox color="secondary" [(ngModel)]="allergies.peanuts"></ion-checkbox>
         </ion-item>
       
-        <ion-item>
+        <ion-item class="list">
           <ion-label>Tree Nuts</ion-label>
-          <ion-checkbox [(ngModel)]="allergies.treenuts"></ion-checkbox>
+          <ion-checkbox color="secondary" [(ngModel)]="allergies.treenuts"></ion-checkbox>
         </ion-item>
 
-        <ion-item>
+        <ion-item class="list">
             <ion-label>Wheat (Gluten)</ion-label>
-            <ion-checkbox [(ngModel)]="allergies.wheat"></ion-checkbox>
+            <ion-checkbox color="secondary" [(ngModel)]="allergies.wheat"></ion-checkbox>
           </ion-item>
 
-          <ion-item>
+          <ion-item class="list">
               <ion-label>Soy</ion-label>
-              <ion-checkbox [(ngModel)]="allergies.soy"></ion-checkbox>
+              <ion-checkbox color="secondary" [(ngModel)]="allergies.soy"></ion-checkbox>
             </ion-item>
 
 
-            <ion-item>
+            <ion-item class="list">
                 <ion-label>Milk</ion-label>
-                <ion-checkbox [(ngModel)]="allergies.milk"></ion-checkbox>
+                <ion-checkbox color="secondary" [(ngModel)]="allergies.milk"></ion-checkbox>
               </ion-item>
 
-              <ion-item>
+              <ion-item class="list">
                   <ion-label>Eggs</ion-label>
-                  <ion-checkbox [(ngModel)]="allergies.eggs"></ion-checkbox>
+                  <ion-checkbox color="secondary" [(ngModel)]="allergies.eggs"></ion-checkbox>
                 </ion-item>
 
-                <ion-item>
+                <ion-item class="list">
                     <ion-label>Fish</ion-label>
-                    <ion-checkbox [(ngModel)]="allergies.fish"></ion-checkbox>
+                    <ion-checkbox color="secondary" [(ngModel)]="allergies.fish"></ion-checkbox>
                   </ion-item>
 
-                  <ion-item>
+                  <ion-item class="list">
                       <ion-label>Shellfish</ion-label>
-                      <ion-checkbox [(ngModel)]="allergies.shellfish"></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="allergies.shellfish" color="secondary"></ion-checkbox>
                     </ion-item>
       
       </ion-list>
-      <div text-center>
-      <button ion-button block (click)="done()">Done</button>
+      <div text-center *ngIf="last != 'SettingsPage'">
+      <button ion-button block (click)="done()" color="secondary">Done</button>
       </div>
 
       <p style="font-size: 10pt">Don't see your allergen listed? We're always trying to update our service - don't hesitate to contact us at mypallergy@gmail.com </p>

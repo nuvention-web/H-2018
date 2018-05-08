@@ -2,36 +2,54 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Restaurants near you</ion-title>
+      <ion-title>
+          <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+        </ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content  class="card-background-page" >
 
-  <ion-card *ngFor="let item of cardItems" type="button" (click)="openItem(item)" >
+  
+
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Search for specific restaurants"></ion-searchbar>
+  <div id="searchBar">
+   <ion-list>
+     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+       <ion-avatar item-start>
+         <img [src]="item.profilePic" />
+       </ion-avatar>
+       <h2>{{item.name}}</h2>
+       <p>{{item.about}}</p>
+     </button>
+   </ion-list>
+   </div>
+
+
+
+
+
+
+
+
+
+  <ion-card *ngFor="let item of cardItems" type="button" (click)="openItem(item)">
 
     
-      <h1>{{item.name}}</h1>
+    <img id="cardimg" [src]="item.profilePic">
+  <div class="card-title"> {{item.name}} </div>
+  <div class="card-subtitle"> <b>{{item.about}}</b> </div>
 
-    <img [src]="item.profilePic">
-
-    <ion-card-content>
-      <p>{{item.about}}</p>
-    </ion-card-content>
-
-    <ion-row>
-      <ion-col>
-        
-      </ion-col>
-      <ion-col>
-        <button ion-button color="primary" clear small icon-start>
+    <div class="card-dist">
+            <button ion-button color="light" clear small icon-start>
             <ion-icon name='compass'></ion-icon>
-             {{item.address}}
+            {{item.distance}} miles away
+            
           </button>
-      </ion-col>
-      <ion-col center text-center>
-      </ion-col>
-    </ion-row>
+        </div>
   </ion-card>
+
+
+
 </ion-content>

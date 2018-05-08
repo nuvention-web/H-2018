@@ -1,24 +1,155 @@
 page-tabs {
 
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #FE9004
+      }
+      
+
+      .tabs-md .tab-button {
+        color: rgb(44, 184, 74) !important;
+       }
+
+       .tabs-ios .tab-button {
+        color: rgb(44, 184, 74) !important;
+       }
+
+      .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+        color: #FE9004;
+      }
+
+      .card-detail-page{
+        background: url("../assets/img/back-min.png") no-repeat center;
+        background-size: cover;
+      }
+
+      .accordion-list{
+          padding-top: 7.5em;
+      }
+
+      .warning{
+          text-align: center;
+          font-size: 1.1em;
+          position: absolute;
+          color: rgb(255, 255, 255);
+          text-shadow: 0 0 4px rgb(0, 0, 0);
+          background: rgba(250, 29, 29, 0.75);
+          padding: 3px;
+      }
+
+      #text{
+         
+          padding-left: 3px;
+          padding-right: 3px;
+          text-align: center;
+      }
+
+
+
+
+
+    @keyframes bounce {
+        0% {
+          -webkit-transform: translate3d(0,0,0);
+        }
+       
+        25% {
+          -webkit-transform: translate3d(0,-30%,0);
+        }
+       
+        50% {
+          -webkit-transform: translate3d(0,0,0);
+        }
+       
+        75% {
+          -webkit-transform: translate3d(0,-30%,0);
+        }
+       
+        100% {
+          -webkit-transform: translate3d(0,0,0);
+        }
+      }
+.heading{
+
+    font-size: 26px;
+    font-weight: bold;
+    max-width: 80%;
+    margin: auto;
+    color: #fff;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
+    text-align: center;
+    padding: 0.25em;
+
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+#card-pic {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+    
+}
+    
+
 
     .section {
-        background: #ffc400;
-        color: #000;
+        background: rgb(254, 146, 4);
+        color: rgb(255, 255, 255);
         
     }
     .section-active {
-        background: #34bb0b;
+        background: #ad6901;
         color: #fff;
+    }
+
+
+    .safe {
+        background: #34bb0b;
+        
+    }
+    .unsafe {
+        background: #ff0909;
+        
     }
     
     .child {
         background: #e8e7e6;
         color: #000;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
     }
     .child-item {
-        background: #f3f2f1;
-        padding: 5px;
+        
+        padding: 2px;
+        padding-bottom: 1em;
+
+    }
+
+    .itemdesc{
+        font-size: 12pt;
+        color: #fff;
+        position: relative;
+        left: 15%;
+
+        
+    }
+
+    .star{
+        color: #ffe600;
+        border: #000;
+        left: -1em;
+        top: 0.1em;
+        position: absolute;
+        font-size: 24px;
+        
+    }
+
+    .list{
+        background-color: transparent;
     }
     
     #map {
@@ -29,4 +160,94 @@ page-tabs {
       .scroll {
         height: 100%
       }
+
+      #searchBar{
+        background: #ffc400;
+      }
+
+      .card-background-page {
+
+        background: url("../assets/img/back-min.png") no-repeat center;
+        background-size: cover;
+
+    ion-card {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  #cardimg {
+      
+      height: 257px;
+  }
+
+  .card-dist {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+   
+    background: rgba(254, 144, 4, 0.65);
+
+  }
+
+  .card-title {
+    position: absolute;
+    top: 33%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 7px rgb(0, 0, 0);
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    
+    text-shadow:  0 0 14px #000;
+   
+    
+  }
+
+
+ 
+}
+
+.subtitle{
+    font-size: 0.9em;
+    position: absolute;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    
+    text-shadow:  0 0 14px #000;
+    text-align: left;
+   margin: auto;
+   width: 90%;
+   padding-left: 0.5em;
+  
+}
+
+.address{
+    font-size: 0.9em;
+    position: absolute;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    text-shadow:  0 0 14px #000;
+    text-align: left;
+    margin: auto;
+    padding-top: 5.5em;
+    padding-left: 0.5em;
+    width: 90%;
+    align-content: left;
+    padding-bottom: 1em;
+}
+
+.col{
+    padding-bottom: 2em;
+}
+
+     
 }

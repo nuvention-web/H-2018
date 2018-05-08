@@ -21,7 +21,7 @@ export class FavsPage {
 
   constructor(public cartp:Cart, public navCtrl: NavController, public navParams: NavParams) {
     
-    console.log(this.cart);
+  
   }
 
   cart: any[];

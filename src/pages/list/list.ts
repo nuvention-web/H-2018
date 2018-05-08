@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MainPage } from '../pages';
+import {SettingsPage} from '../settings/settings';
 import {AllegensProvider} from '../../providers/allegens/allegens';
 
 /**
@@ -26,20 +27,22 @@ export class ListPage {
   eggs: boolean = false;
   fish: boolean = false;
   shellfish: boolean = false;
+  last: string;
 
   constructor(public allergies: AllegensProvider, public navCtrl: NavController, public navParams: NavParams) {
+    
+  
+  }
+
+  ngOnInit()
+  {
+    this.last = this.navCtrl.getPrevious().component.name;
   }
 
   done(){
+   
   this.navCtrl.push(MainPage);
-  console.log(this.allergies.peanuts);
-  console.log(this.allergies.treenuts);
-  console.log(this.allergies.wheat);
-  console.log(this.allergies.milk);
-  console.log(this.allergies.soy);
-  console.log(this.allergies.eggs);
-  console.log(this.allergies.fish);
-  console.log(this.allergies.shellfish);
+   
   }
   
 
