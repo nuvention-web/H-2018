@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 /*
   Generated class for the AllegensProvider provider.
@@ -17,9 +19,21 @@ export class AllegensProvider {
   eggs: boolean = false;
   fish: boolean = false;
   shellfish: boolean = false;
+  lat: number;
+  lng: number;
 
-  constructor(public http: HttpClient) {
-    console.log();
-  }
+  constructor(public http: HttpClient, private geolocation: Geolocation) {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.lat = resp.coords.latitude;
+      this.lng = resp.coords.longitude;
+      console.log(this.lat);
+    })
+    .catch((error) => {
+       console.log('Error getting location', error);
+     });
+  
 
-}
+  
+    }
+
+    }
