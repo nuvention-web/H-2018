@@ -11,30 +11,33 @@ export class Items {
     let items = [
       {
         "name": "Lou Malnati's",
-        "profilePic": "assets/img/catering-pizza-large.jpg",
-        "about": "Family-owned local chain for Italian classics & Chicago-style, deep-dish pizzas with butter crusts.",
+        "profilePic": "https://www.loumalnatis.com/filebin/images/about-pizza-body-large.jpg",
+        "about": "Family-owned chain for Italian classics & Chicago-style, deep-dish pizzas with butter crusts.",
         "data": "lous",
         "address":"1850 Sherman Ave, Evanston, IL 60201",
         "lat": 42.0514654,
         "lng": -87.6820016,
+        "index": 0,
       },
       {
         "name": "Chipotle",
-        "profilePic": "https://cdn.worldvectorlogo.com/logos/chipotle-mexican-grill.svg",
+        "profilePic": "http://teacherpress.ocps.net/hilights/files/2018/01/20170707_GH_CHIPOTLE_1010-1021x580.jpg",
         "about": "Fast-food chain offering Mexican fare, including design-your-own burritos, tacos & bowls.",
         "data": "chipotle",
         "address": "711 Church St, Evanston, IL 60201",
         "lat": 42.048613,
-        "lng": -87.681222
+        "lng": -87.681222,
+        "index": 1
       },
       {
         "name": "La Cocinita",
-        "profilePic": "https://s3-media3.fl.yelpcdn.com/bphoto/_Ra_Y7SYJLXHMeLTVDJ3Mg/348s.jpg",
+        "profilePic": "https://lacocinitafoodtruck.com/wp-content/uploads/2016/09/truckmenupic4.jpg",
         "about": "Eatery serving Venezuelan-inspired Latin American street food in a casual, contemporary space.",
         "data": "lacoc",
         "address": "1625 Chicago Ave, Evanston, IL 60201",
         "lat": 42.047046,
-        "lng": -87.678949
+        "lng": -87.678949,
+        "index": 2
       },
       {
         "name": "Dave's New Kitchen",
@@ -43,7 +46,8 @@ export class Items {
         "data": "daves",
         "address": "815 Noyes St, Evanston, IL 60201",
         "lat": 42.058594,
-        "lng": -87.682534
+        "lng": -87.682534,
+        "index": 3
       },
       {
         "name": "Aloha Poke",
@@ -52,7 +56,8 @@ export class Items {
         "data": "aloha",
         "address": "630 Davis St, Evanston, IL 60201",
         "lat": 42.046513,
-        "lng": -87.681215
+        "lng": -87.681215,
+        "index": 4
       },
       {
         "name": "Naf Naf Grill",
@@ -61,8 +66,30 @@ export class Items {
         "data": "nafnaf",
         "address": "1629 Orrington Ave, Evanston, IL 60201",
         "lat": 42.047687,
-        "lng": -87.680707
+        "lng": -87.680707,
+        "index": 5
       },
+      {
+        "name": "Blaze Pizza",
+        "profilePic": "http://4e3tuo3do51baai522lhhji4.wpengine.netdna-cdn.com/wp-content/uploads/2016/11/blazepizza_81-600x399.jpg",
+        "about": "Hip counter-serve pizzeria dishing up crispy, thin-crust pies made with creative toppings & sauces.",
+        "data": "blaze",
+        "address": "1737 Sherman Ave, Evanston, IL 60201",
+        "lat": 42.049606,
+        "lng": -87.681572,
+        "index": 6
+      },
+      {
+        "name": "Frontera Fresco",
+        "profilePic": "http://www.rickbayless.com/wp-content/uploads/2015/05/RB.com_FrescoMenuItem_11.jpg",
+        "about": "Quick-serve outpost offering market-driven Mexican favorites plus fruit juices.",
+        "data": "frontera",
+        "address": "1999 Campus Dr, Evanston, IL 60208",
+        "lat": 42.053309,
+        "lng": -87.672955,
+        "index": 7
+      },
+
      
     ];
 
