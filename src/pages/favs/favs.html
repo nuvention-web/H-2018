@@ -8,7 +8,9 @@
 
   <ion-navbar>
 
-    <ion-title>Favourites</ion-title>
+      <ion-title>
+          <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+        </ion-title>
     <ion-buttons end>
     <button ion-button icon-only (click)="clearC()">
       Clear all 
@@ -21,14 +23,49 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="card-detail-page">
+  <div class="heading">Favorites List</div>
+
+  <div class="intro">
+    Tap your favorite menu items to save them for later and share with friends.
+  </div>
+  <br>
+  <div id="share-buttons">
+    
+     
+      <!-- Email -->
+      <a href="mailto:?Subject=Check out Pallergy&amp;Body=Check out this awesome list of allergy friendly dishes I built using Pallergy, a mobile help that helps you to find food that won't hurt you: {{cart}}">
+          <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+      </a>
+   
+      <!-- Facebook -->
+      <a href="http://www.facebook.com/sharer.php?u=mypallergy.com" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+      </a>
+      
+       
+      <!-- Twitter -->
+      <a href="https://twitter.com/share?url=https://mypallergy.com&amp;text=Check out this awesome list of allergy friendly dishes I built using Pallergy, a mobile help that helps you to find food that won't hurt you: {{cart}}&amp;hashtags=#myPallergy" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+      </a>
+      
+
+  
+  </div>
+
+  
 
 
-  <div *ngFor="let item of cart" >
-<ion-item *ngIf="clear == false">
+  
+    <ion-list *ngFor="let item of cart" class="favs">
+<div *ngIf="clear == false">
+  <ion-item [ngClass]="'even'">
     {{item}}
   </ion-item>
-
   </div>
+</ion-list>
+  
+  
+
 
 </ion-content>

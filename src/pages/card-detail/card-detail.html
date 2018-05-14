@@ -1,16 +1,78 @@
 <ion-header>
     <ion-navbar>
-      <ion-title></ion-title>
+        <ion-title>
+            <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+          </ion-title>
     </ion-navbar>
   </ion-header>
   
-  <ion-content>
+
+  <ion-content class="card-detail-page">
+
+
+      <div class="heading">
+          {{item.name}}
+      </div>
+
+
+<div>
+<ion-grid>
+  
+
+  <ion-row>
+      <ion-col class="img">
+       
+        <img [src]="item.profilePic" id="card-pic">
+       
+
+      </ion-col>
+
+      <ion-col class="col">
+
+          <div class="subtitle">
+              {{item.percent}} % of these menu items are safe to eat and highlighted in green. Unsafe menu items are highlighted in red.
+              </div>
+
+       
+
+             
+        </ion-col>
+    </ion-row>
+    <ion-row>
+  
+            
+            <div class="button-holder">
+
+            <button ion-button color="secondary" small id="maps">
+               <ion-icon name='navigate'></ion-icon>
+               Open in Google Maps
+               
+             </button>
+          
+          
+        
+             <button ion-button color="secondary" id="but">
+                <ion-icon name='call'></ion-icon>
+                <a id="link" [href]="item.number">Call Restaurant</a>
+                </button>
+              </div>
+ 
+    </ion-row>
+</ion-grid>
+    </div>
+    
+    
+
+    <div class="warning"> <b> <p id="text">Please note that this information is only a guide. It is important to still declare 
+      your allergy information to your server.</p>
+    </b></div>
+    
 
         <ion-list class="accordion-list">
-          <!-- First Level -->
-          <ion-list-header *ngFor="let item of menuTypes | async; let i = index" no-lines no-padding>
-            <!-- Toggle Button -->
-            <button ion-item (click)="shower(i)" [ngClass]="{'section-active': show[i], 'section': !show[i]}">
+        
+          <ion-list *ngFor="let item of menuTypes | async; let i = index" no-lines no-padding>
+           
+            <button ion-item (click)="shower(i)" [ngClass]="{'section-active': show[i], 'section': !show[i]}" detail-none>
               <ion-icon item-left name="arrow-forward" *ngIf="!show[i]"></ion-icon>
               <ion-icon item-left name="arrow-down" *ngIf="show[i]"></ion-icon>
                 {{ item.type }}
@@ -18,34 +80,47 @@
           
             
             <ion-list *ngIf="item.children && show[i]">
-                <!-- Third Level -->
+            
                 <div *ngFor="let child of item.children, let j = index" detail-none class="child-item" text-wrap>
-                  <ion-item *ngIf="!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
+                  
+                  <!-- <ion-item *ngIf="!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
                   && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
                   && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
                   && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE')">
                   
-                
+                  -->
+
+                  <ion-item [ngClass]="!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
+                  && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
+                  && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
+                  && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE') ? 'safe' : 'unsafe'">
                     
-                  <button ion-item (click)="addToCart(child.menuItem, i, j)">
-                      <ion-icon *ngIf="checked[i][j] == true && clear == false" name='star'> </ion-icon>
+                  <button ion-item (click)="addToCart(child.menuItem, i, j)" detail-none [ngClass]="!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
+                  && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
+                  && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
+                  && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE') ? 'safe' : 'unsafe'">
+                      
+                  <div class="itemdesc">
+                  <ion-icon class="star" *ngIf="cart.fav[index1][i][j] == true" name='star'> </ion-icon>
                     
-                      {{ child.menuItem }}
+                   {{ child.menuItem }}
                    
-                    <ion-item *ngIf="child.desc">
+
+                  </div>
+                    <p class="itemdesc" *ngIf="child.desc">
                       {{child.desc}}
-                    </ion-item>
+                    </p>
                     
                     </button>
                  
-                  <!-- Direct Add Button -->
+            
                  
                 </ion-item>
               </div>
               </ion-list>
-    
+            
        
-              </ion-list-header>
+              </ion-list>
             </ion-list>
     
 

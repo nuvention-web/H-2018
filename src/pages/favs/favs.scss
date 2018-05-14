@@ -1,3 +1,18 @@
 page-favs {
 
+    .odd{
+        background: rgba(250, 191, 82, 0.4);
+        color: white;
+        font-size: 12pt;
+        text-shadow: 0 0 4px rgb(0, 0, 0);
+    }
+
+    .even{
+
+        background: rgba(254, 144, 4, 0.4);
+        color: white;
+        font-size: 12pt;
+        text-shadow: 0 0 4px rgb(0, 0, 0);
+    }
+
 }

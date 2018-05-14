@@ -9,6 +9,7 @@ import { DataSnapshot } from '@firebase/database';
 import { HttpClient } from '@angular/common/http';
 import { AllegensProvider} from '../../providers/allegens/allegens';
 import { Cart} from '../../providers/cart/cart';
+import { CallNumber } from '@ionic-native/call-number';
 
 
 
@@ -27,7 +28,10 @@ export class CardDetailPage {
   review: any;
   show: boolean[];
   checked: boolean[][];
-  clear: boolean;
+  index1: any;
+  var: string;
+  
+  
  
 
 
@@ -37,31 +41,40 @@ export class CardDetailPage {
   information: any[];
   
 
-  constructor(public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
+  constructor(private callNumber: CallNumber, public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
    this.item = navParams.get('item') || reviews.defaultReview;
     this.currentReviews = this.reviews.query();
-    
+    this.index1 = this.item.index;
+  
+
+  
+  
     
     
   }
 
 
-   
   ngOnInit() {
     this.show = [false, false, false, false, false, false];
-    this.checked = [[],[],[], [], [], [], [],[],[], [], [], [], [],[],[], [], [], []];
     this.menuTypes = this.getReviews('/' + this.item.data );
-    this.clear = this.cart.clear;
-    console.log(this.clear);
+    
   /*  this.db.database.ref("/lous").on("value", function(snapshot) {
       console.log(snapshot.val());
     });
 
 */
-
-    this.clear = false;
-
+    
   }
+
+
+  call() {
+    this.var = this.item.number;
+    this.callNumber.callNumber(this.var, true);
+}
+
+
+
+
 
   shower(i){
     this.show[i] = !this.show[i];
@@ -103,16 +116,17 @@ export class CardDetailPage {
 
   addToCart(item, i, j) {
 
+    
     let fav = this.item.name + " - " + item;
     let index = this.cart.cart.indexOf(fav);
     //item.checked=false;
     if (index == -1 ) {
       this.cart.cart.push(fav);
-      this.checked[i][j] = !this.checked[i][j];
+      this.cart.fav[this.index1][i][j] = !this.cart.fav[this.index1][i][j];
     }
     else{
     this.cart.cart.splice(index, 1);
-    this.checked[i][j] = !this.checked[i][j];
+    this.cart.fav[this.index1][i][j] = !this.cart.fav[this.index1][i][j];
     }
    
    

@@ -23,6 +23,9 @@ import { CardDetailPage } from '../pages/card-detail/card-detail';
 import {AllegensProvider} from '../providers/providers';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Cart} from '../providers/cart/cart';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+import {SocialSharing} from '@ionic-native/social-sharing';
+import {CallNumber} from '@ionic-native/call-number';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -80,6 +83,9 @@ export function provideSettings(storage: Storage) {
     AllegensProvider,
     Geolocation,
     Cart,
+    InAppBrowser,
+    SocialSharing,
+    CallNumber,
     
     
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },

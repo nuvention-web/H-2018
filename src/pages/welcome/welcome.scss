@@ -1,16 +1,9 @@
 page-welcome {
-  .splash-bg {
-    position: relative;
-    background: url('https://c1.staticflickr.com/2/1677/24166255505_371e542816_c.jpg') no-repeat transparent;
-    background-size: cover;
-    height: 45%;
-    z-index: 1;
-    background-repeat: repeat-x;
-    animation: animatedBackground 40s linear infinite;
-  }
+ 
 
   .master{
-    background-color: burlywood;
+    background: url("../assets/img/pic1.png") no-repeat center;
+    background-size: cover;
   }
 
   @keyframes animatedBackground {
@@ -28,15 +21,27 @@ page-welcome {
     margin: auto;
     background: url('../assets/img/logo-new.png') repeat transparent;
     background-size: 100%;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
+    padding-top: 5em;
+
   }
   .splash-intro {
-    font-size: 18px;
+    text-align: center;
+    font-size: 25px;
     font-weight: bold;
-    max-width: 80%;
     margin: auto;
+    color: #fff;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
   }
+
+  #getstarted{
+    width: 50%;
+    margin: auto;
+    
+  }
+
+
   button.login {
     margin-top: 25px;
     background-color: white;

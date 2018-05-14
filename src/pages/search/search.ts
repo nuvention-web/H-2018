@@ -19,6 +19,7 @@ export class SearchPage {
 
   currentItems: any = [];
   markers: Item[];
+  myMarker: any;
 
   @ViewChild('mapContainer') mapContainer: ElementRef;
   map: any;
@@ -79,7 +80,7 @@ export class SearchPage {
     });
 
     this.infoWindows.push(infoWindow);
-    console.log(marker);
+   
     google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
       document.getElementById('content').addEventListener('click', () => {
         this.openItem(marker.data);
@@ -102,238 +103,75 @@ export class SearchPage {
       myLocation: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       styles: [
-        {
-          "elementType": "geometry",
-          "stylers": [
+        
+          
             {
-              "color": "#ebe3cd"
-            }
-          ]
-        },
-        {
-          "elementType": "labels.text.fill",
-          "stylers": [
+              "elementType": "geometry.stroke",
+              "stylers": [
+                {
+                  "weight": 1
+                }
+              ]
+            },
             {
-              "color": "#523735"
-            }
-          ]
-        },
-        {
-          "elementType": "labels.text.stroke",
-          "stylers": [
+              "elementType": "labels.icon",
+              "stylers": [
+                {
+                  "weight": 0.5
+                }
+              ]
+            },
             {
-              "color": "#f5f1e6"
-            }
-          ]
-        },
-        {
-          "featureType": "administrative",
-          "elementType": "geometry.stroke",
-          "stylers": [
+              "elementType": "labels.text.fill",
+              "stylers": [{
+                  "color": "#029735"
+                }
+              ]
+            },
             {
-              "color": "#c9b2a6"
-            }
-          ]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "geometry.stroke",
-          "stylers": [
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "color": "#fffff3"
+                }
+              ]
+            },
             {
-              "color": "#dcd2be"
-            }
-          ]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels",
-          "stylers": [
+              "featureType": "administrative.land_parcel",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
             {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels.text.fill",
-          "stylers": [
+              "featureType": "poi.business",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
             {
-              "color": "#ae9e90"
-            }
-          ]
-        },
-        {
-          "featureType": "landscape.natural",
-          "elementType": "geometry",
-          "stylers": [
+              "featureType": "poi.park",
+              "elementType": "labels.text",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
             {
-              "color": "#dfd2ae"
+              "featureType": "road.local",
+              "elementType": "labels",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
             }
-          ]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#dfd2ae"
-            }
-          ]
-        },
-        {
-          "featureType": "poi",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#93817c"
-            }
-          ]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "geometry.fill",
-          "stylers": [
-            {
-              "color": "#a5b076"
-            }
-          ]
-        },
-        {
-          "featureType": "poi.park",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#447530"
-            }
-          ]
-        },
-        {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#f5f1e6"
-            }
-          ]
-        },
-        {
-          "featureType": "road.arterial",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#fdfcf8"
-            }
-          ]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#f8c967"
-            }
-          ]
-        },
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry.stroke",
-          "stylers": [
-            {
-              "color": "#e9bc62"
-            }
-          ]
-        },
-        {
-          "featureType": "road.highway.controlled_access",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#e98d58"
-            }
-          ]
-        },
-        {
-          "featureType": "road.highway.controlled_access",
-          "elementType": "geometry.stroke",
-          "stylers": [
-            {
-              "color": "#db8555"
-            }
-          ]
-        },
-        {
-          "featureType": "road.local",
-          "elementType": "labels",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "featureType": "road.local",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#806b63"
-            }
-          ]
-        },
-        {
-          "featureType": "transit.line",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#dfd2ae"
-            }
-          ]
-        },
-        {
-          "featureType": "transit.line",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#8f7d77"
-            }
-          ]
-        },
-        {
-          "featureType": "transit.line",
-          "elementType": "labels.text.stroke",
-          "stylers": [
-            {
-              "color": "#ebe3cd"
-            }
-          ]
-        },
-        {
-          "featureType": "transit.station",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#dfd2ae"
-            }
-          ]
-        },
-        {
-          "featureType": "water",
-          "elementType": "geometry.fill",
-          "stylers": [
-            {
-              "color": "#b9d3c2"
-            }
-          ]
-        },
-        {
-          "featureType": "water",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#92998d"
-            }
-          ]
-        }
-      ],
+          ],
     }
     this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
   
@@ -344,22 +182,37 @@ export class SearchPage {
       this.addInfoWindowToMarker(marker);
     }
 
-  this.geolocation.watchPosition().subscribe((resp) => {
-    let latLng = new google.maps.LatLng(resp.coords.latitude,
-    resp.coords.longitude);
-    this.map.setCenter(latLng);
-    let marker = new google.maps.Marker({
-      map: this.map,
-      icon: {
-        path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-              strokeColor : '#3333FF',
-              strokeWeight : 5,
-              scale: 3.5,
-      },
+    this.geolocation.getCurrentPosition().then((position) => {
+ 
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      this.map.setCenter(latLng);
+      let myMarker = new google.maps.Marker({
+        map: this.map,
+        icon: {
+          path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                strokeColor : '#ff9007',
+                strokeWeight : 5,
+                scale: 3.5,
+        },
+        
+          animation: google.maps.Animation.DROP,
+        position: latLng
+      });
       
-        animation: google.maps.Animation.DROP,
-      position: latLng
+ 
+      this.geolocation.watchPosition().subscribe((resp) => {
+        let latLng = new google.maps.LatLng(resp.coords.latitude,
+        resp.coords.longitude);
+        myMarker.setPosition(latLng);
+ 
+    }, (err) => {
+      console.log(err);
     });
+ 
+
+  
+   
+    
 
 
   }, (err) => {
