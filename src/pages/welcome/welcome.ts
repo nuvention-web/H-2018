@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import {AllegensProvider} from '../../providers/allegens/allegens';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -14,7 +15,10 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public a: AllegensProvider, public navCtrl: NavController) {
+
+    this.a.start = true;
+   }
 
   login() {
     this.navCtrl.push('LoginPage');

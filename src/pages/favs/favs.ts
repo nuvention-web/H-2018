@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AllegensProvider} from '../../providers/allegens/allegens';
 import { Cart} from '../../providers/cart/cart';
-import { clearModulesForTest } from '@angular/core/src/linker/ng_module_factory_loader';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 /**
@@ -19,13 +19,53 @@ import { clearModulesForTest } from '@angular/core/src/linker/ng_module_factory_
 })
 export class FavsPage {
 
-  constructor(public cartp:Cart, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public cartp:Cart, public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing) {
     
   
   }
 
   cart: any[];
   clear: boolean;
+
+
+
+
+  compilemsg(){
+
+    if(this.cart.length != 0)
+    {
+    var msg = this.cart[0];
+    for (let index = 1; index < this.cart.length; index++) {
+      
+       msg.concat("\n " + this.cart[index]);
+      
+    }
+    
+    return msg.concat(" \n Sent from Pallergy !");
+  }
+
+}
+  
+otherShare(){
+
+  console.log("hi");
+  this.socialSharing.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"https://pointdeveloper.com")
+  .then(()=>{
+      alert("Success");
+    },
+    ()=>{
+       alert("failed")
+    })
+
+    
+}
+
+
+  share()
+  {
+    var msg = this.compilemsg();
+    this.socialSharing.share(msg, null, null, null);
+  }
  
   
   ngOnInit(){

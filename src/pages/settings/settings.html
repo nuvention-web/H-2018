@@ -9,9 +9,17 @@
 </ion-header>
 
 <ion-content class="card-detail-page">
-<h1>Settings</h1>
-  <button ion-item (click)="updateAllergens()">
+<div class="heading">Settings</div>
+
+<ion-list class="settings">
+  <button ion-item class="setting" (click)="updateAllergens()">
     Update allergens
   </button>
+<br>
+  <button ion-item  class="setting" onclick="window.open('https://mypallergy.carrd.co/', 'height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')">
+      Join our mailing list
+    </button>
+
+  </ion-list>
 
 </ion-content>

@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ListPage} from '../list/list';
 import { Settings } from '../../providers/providers';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * The Settings page is a simple form that syncs with a Settings provider
@@ -18,7 +19,7 @@ import { Settings } from '../../providers/providers';
 export class SettingsPage {
   // Our local settings object
 
-  constructor(public navCtrl: NavController)
+  constructor(private iab: InAppBrowser, public navCtrl: NavController)
   {  
   }
   
@@ -26,5 +27,12 @@ updateAllergens()
 {
   this.navCtrl.push(ListPage);
 }
+
+
+
+openLink(){
+  this.iab.create("https://mypallergy.carrd.co/", '_blank', 'location=yes');
+}
  
 }
+

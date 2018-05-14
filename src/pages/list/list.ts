@@ -4,6 +4,7 @@ import { MainPage } from '../pages';
 import {SettingsPage} from '../settings/settings';
 import {AllegensProvider} from '../../providers/allegens/allegens';
 
+
 /**
  * Generated class for the ListPage page.
  *

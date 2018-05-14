@@ -9,6 +9,7 @@ import { DataSnapshot } from '@firebase/database';
 import { HttpClient } from '@angular/common/http';
 import { AllegensProvider} from '../../providers/allegens/allegens';
 import { Cart} from '../../providers/cart/cart';
+import { CallNumber } from '@ionic-native/call-number';
 
 
 
@@ -28,6 +29,7 @@ export class CardDetailPage {
   show: boolean[];
   checked: boolean[][];
   index1: any;
+  var: string;
   
   
  
@@ -39,11 +41,11 @@ export class CardDetailPage {
   information: any[];
   
 
-  constructor(public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
+  constructor(private callNumber: CallNumber, public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
    this.item = navParams.get('item') || reviews.defaultReview;
     this.currentReviews = this.reviews.query();
     this.index1 = this.item.index;
-    console.log(this.index1);
+  
 
   
   
@@ -63,6 +65,16 @@ export class CardDetailPage {
 */
     
   }
+
+
+  call() {
+    this.var = this.item.number;
+    this.callNumber.callNumber(this.var, true);
+}
+
+
+
+
 
   shower(i){
     this.show[i] = !this.show[i];

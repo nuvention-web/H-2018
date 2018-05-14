@@ -21,27 +21,46 @@
 
   <ion-row>
       <ion-col class="img">
+       
         <img [src]="item.profilePic" id="card-pic">
+       
+
       </ion-col>
 
       <ion-col class="col">
 
           <div class="subtitle">
-              {{item.about}}
+              {{item.percent}} % of these menu items are safe to eat and highlighted in green. Unsafe menu items are highlighted in red.
               </div>
 
-          <div class="address">
-              Address: {{item.address}}
-              <button ion-button color="primary" clear small icon-start>
-                 <ion-icon name='navigate'></ion-icon>
-                 Open in Google Maps
-                 
-               </button>
-             </div>
+       
+
+             
         </ion-col>
+    </ion-row>
+    <ion-row>
+  
+            
+            <div class="button-holder">
+
+            <button ion-button color="secondary" small id="maps">
+               <ion-icon name='navigate'></ion-icon>
+               Open in Google Maps
+               
+             </button>
+          
+          
+        
+             <button ion-button color="secondary" id="but">
+                <ion-icon name='call'></ion-icon>
+                <a id="link" [href]="item.number">Call Restaurant</a>
+                </button>
+              </div>
+ 
     </ion-row>
 </ion-grid>
     </div>
+    
     
 
     <div class="warning"> <b> <p id="text">Please note that this information is only a guide. It is important to still declare 
