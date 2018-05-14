@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Observable } from 'rxjs/Observable';
 
 
 /*
@@ -21,8 +22,16 @@ export class AllegensProvider {
   shellfish: boolean = false;
   lat: number;
   lng: number;
+  start:  boolean =false;
+  
+
+  menuTypes: Observable<any[]>;
 
   constructor(public http: HttpClient, private geolocation: Geolocation) {
+
+   
+
+
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lng = resp.coords.longitude;
