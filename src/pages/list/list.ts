@@ -45,6 +45,12 @@ export class ListPage {
   this.navCtrl.push(MainPage);
    
   }
+
+  done2(){
+   
+    this.navCtrl.pop();
+     
+    }
   
 
 }

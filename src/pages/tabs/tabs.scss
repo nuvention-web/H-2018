@@ -46,8 +46,37 @@ page-tabs {
           text-shadow: 0 0 4px rgb(0, 0, 0);
           background: rgba(250, 29, 29, 0.75);
           padding: 3px;
-          top: 45%;
+          top: 65%;
+          animation-name: example;
+        animation-duration:3s;
+        animation-iteration-count: infinite;
         
+      }
+
+      .subheading{
+        font-size: 1.25em;
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+       
+        text-shadow:  4px 4px 14px #000;
+
+      }
+
+      .percentage{
+        font-size: 1.5em;
+        position: absolute;
+        top: 113.5%;
+        font-weight: bold;
+        left: 11.5%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+      
+       
+        text-shadow:  4px 4px 14px #000;
+
       }
 
       #text{
@@ -57,33 +86,54 @@ page-tabs {
           text-align: center;
       }
 
+      .green{
 
+        font-size: 1.25em;
+        position: absolute;
+        top: 110%;
+        font-weight: bold;
+        left: 35%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        width: 60%;
+        background: #25a705;
 
-
-
-    @keyframes bounce {
-        0% {
-          -webkit-transform: translate3d(0,0,0);
-        }
-       
-        25% {
-          -webkit-transform: translate3d(0,-30%,0);
-        }
-       
-        50% {
-          -webkit-transform: translate3d(0,0,0);
-        }
-       
-        75% {
-          -webkit-transform: translate3d(0,-30%,0);
-        }
-       
-        100% {
-          -webkit-transform: translate3d(0,0,0);
-        }
       }
+
+
+      .red{
+
+        font-size: 1.25em;
+        position: absolute;
+        top: 125%;
+        font-weight: bold;
+        left: 35%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        width: 60%;
+
+       
+       
+        background: #cc2727;
+
+      }
+
+
+
+      @keyframes example {
+        0%   {background-color:rgba(250, 29, 29, 0.75) }
+        25%  {background-color:rgba(117, 5, 5, 0.75)}
+        50%  {background-color: rgba(250, 29, 29, 0.75)}
+        75%  {background-color:rgba(117, 5, 5, 0.75) }
+        100% {background-color:rgba(250, 29, 29, 0.75) }
+    }
+
+    
 .heading{
 
+   
     font-size: 26px;
     font-weight: bold;
     max-width: 80%;
@@ -92,7 +142,48 @@ page-tabs {
     text-shadow: 0 0 4px rgb(0, 0, 0);
     text-align: center;
     padding: 0.25em;
+    
+    
+   
+   
 
+}
+
+.allergen-free{
+    font-size: 11px;
+    font-weight: bold;
+    max-width: 80%;
+    margin: auto;
+    color: #fff;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
+    left: 3%;
+    position: relative;
+  
+    
+
+}
+
+.heading-new{
+
+    font-size: 35px;
+    font-weight: bold;
+   
+    color: #fff;
+    text-shadow: 0 3px 15px rgb(0, 0, 0);
+    text-align: center;
+    padding: 0.25em;
+   
+    top: 8.5%;
+    
+    position: absolute;
+
+}
+
+.header-pic{
+
+    position: relative;
+    height: 281px;
+   
 }
 
 #share-buttons{
@@ -159,7 +250,8 @@ page-tabs {
         font-size: 12pt;
         color: #fff;
         position: relative;
-        left: 15%;
+        padding-left: 2.5em;
+       
 
         
     }
@@ -169,8 +261,9 @@ page-tabs {
         border: #000;
         left: -1em;
         top: 1%;
-        position: absolute;
+        position: relative;
         font-size: 24px;
+        z-index: 10;
         
     }
 
@@ -341,15 +434,81 @@ page-tabs {
 #but{
     width: 45%;
     padding: 18px;
-    left:3%;
-   align-self: auto;
-    display: inline-block;
+    position: absolute;
+    top: 42%;
+    left: 53%;
+    background: rgb(248, 162, 50);
+
     
    
     
     
     
 }
+
+
+.round-star-label {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border: none;
+    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #188a01;
+    left: 10%;
+    top: 9.5%;
+  }
+  
+  .round-star-label::before {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    border: none;
+    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #188a01;
+    text-shadow: none;
+    -webkit-transform: rotateZ(30deg)   ;
+    transform: rotateZ(30deg)   ;
+  }
+  
+  .round-star-label::after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    border: none;
+    font: normal 100%/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #188a01;
+    text-shadow: none;
+    -webkit-transform: rotateZ(60deg)   ;
+    transform: rotateZ(60deg)   ;
+  }
+
+
+
 #maps{
     width: 45%;
     color: white;
