@@ -18,7 +18,8 @@ export class Items {
         "lat": 42.0514654,
         "lng": -87.6820016,
         "index": 0,
-        "number" : "tel:+18473285400"
+        "number" : "tel:+18473285400",
+        "percent": 0
       },
       {
         "name": "Chipotle",
@@ -29,7 +30,8 @@ export class Items {
         "lat": 42.048613,
         "lng": -87.681222,
         "index": 1,
-        "number": "tel:+18474253959"
+        "number": "tel:+18474253959",
+        "percent": 0
 
       },
       {
@@ -41,7 +43,8 @@ export class Items {
         "lat": 42.047046,
         "lng": -87.678949,
         "index": 2,
-        "number": "tel:+18473321625"
+        "number": "tel:+18473321625",
+        "percent": 0
       },
       {
         "name": "Dave's New Kitchen",
@@ -52,7 +55,8 @@ export class Items {
         "lat": 42.058594,
         "lng": -87.682534,
         "index": 3,
-        "number": "tel:+18478646000"
+        "number": "tel:+18478646000",
+        "percent": 0
       },
       {
         "name": "Aloha Poke",
@@ -63,7 +67,8 @@ export class Items {
         "lat": 42.046513,
         "lng": -87.681215,
         "index": 4,
-        "number": "tel:+12249997298"
+        "number": "tel:+12249997298",
+        "percent": 0
       },
       {
         "name": "Naf Naf Grill",
@@ -74,7 +79,8 @@ export class Items {
         "lat": 42.047687,
         "lng": -87.680707,
         "index": 5,
-        "number": "tel:+18478668470"
+        "number": "tel:+18478668470",
+        "percent": 0
       },
       {
         "name": "Blaze Pizza",
@@ -85,7 +91,8 @@ export class Items {
         "lat": 42.049606,
         "lng": -87.681572,
         "index": 6,
-        "number": "tel:+18472649263"
+        "number": "tel:+18472649263",
+        "percent": 0
       },
       {
         "name": "Frontera Fresco",
@@ -96,7 +103,8 @@ export class Items {
         "lat": 42.053309,
         "lng": -87.672955,
         "index": 7,
-        "number": "tel:+18474912300"
+        "number": "tel:+18474912300",
+        "percent": 0
       },
       {
         "name": "Boltwood",
@@ -107,7 +115,32 @@ export class Items {
         "lat": 42.046666,
         "lng": -87.682288,
         "index": 8,
-        "number": "tel:+18478592880"
+        "number": "tel:+18478592880",
+        "percent": 0
+      },
+      {
+        "name": "Panera Bread",
+        "profilePic": "https://www.panerabread.com/content/dam/panerabread/menu/catering-categories/misc/landingpage-3waystoorder-popularbundles.jpg",
+        "about": "Counter-serve bakery/cafe chain serving sandwiches, salads & more, known for its bread & free WiFi.",
+        "data": "panera",
+        "address": "1700 Sherman Ave, Evanston, IL 60201",
+        "lat": 42.048625,
+        "lng": -87.682202,
+        "index": 9,
+        "number": "tel:+18477338356",
+        "percent": 0
+      },
+      {
+        "name": "Bat 17",
+        "profilePic": "https://s3-media3.fl.yelpcdn.com/bphoto/m58LquN75z1TTsSzfcA0OA/o.jpg",
+        "about": "Expansive sports bar offering sandwiches, booze, pool & more in a TV-adorned setting.",
+        "data": "bat17",
+        "address": "1709 Benson Ave, Evanston, IL 60201",
+        "lat": 42.048831,
+        "lng": -87.683107,
+        "index": 10,
+        "number": "tel:+18477337117",
+        "percent": 0
       },
 
      
