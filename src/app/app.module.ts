@@ -14,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { Items } from '../mocks/providers/items';
 import { Reviews } from '../mocks/providers/reviews';
-import { Settings} from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
@@ -26,6 +25,10 @@ import { Cart} from '../providers/cart/cart';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {SocialSharing} from '@ionic-native/social-sharing';
 import {CallNumber} from '@ionic-native/call-number';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { AnalyticsProvider } from '../providers/analytics/analytics';
+
+
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -40,21 +43,17 @@ export function provideSettings(storage: Storage) {
    * You can add new settings options at any time. Once the settings are saved,
    * these values will not overwrite the saved values (this can be done manually if desired).
    */
-  return new Settings(storage, {
-    option1: true,
-    option2: 'Ionitron J. Framework',
-    option3: '3',
-    option4: 'Hello'
-  });
 }
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+   
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -86,11 +85,14 @@ export function provideSettings(storage: Storage) {
     InAppBrowser,
     SocialSharing,
     CallNumber,
+    GoogleAnalytics,
+
     
     
-    { provide: Settings, useFactory: provideSettings, deps: [Storage] },
+    
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AnalyticsProvider,
 
   ]
 })
