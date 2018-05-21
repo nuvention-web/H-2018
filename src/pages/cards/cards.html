@@ -34,7 +34,7 @@
 
 
 
-  <ion-card *ngFor="let item of cardItems" type="button" (click)="openItem(item)">
+  <ion-card *ngFor="let item of Cards " type="button" (click)="openItem(item)">
 
     
     <img id="cardimg" [src]="item.profilePic">
@@ -64,7 +64,7 @@
 <div class ="card-percent">
 
 
-    {{item.percent}} % of this menu is safe to eat 
+    {{ item.percent }} % of this menu is free of your allergens
 </div>
 
     <div class="card-dist">

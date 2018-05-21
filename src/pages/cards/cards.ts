@@ -9,6 +9,7 @@ import {AllegensProvider} from '../../providers/allegens/allegens';
 import { AngularFireDatabase, AngularFireAction } from 'angularfire2/database'; 
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-cards',
@@ -18,6 +19,7 @@ export class CardsPage {
  
 
   cardItems: Item[];
+  Cards: Item[];
   currentItems: any = [];
   menuTypes: any =[];
   count: number = 0;
@@ -33,34 +35,18 @@ export class CardsPage {
   }
 
   
-
-
-
-  
-
-
- 
-
-ngOnInit(){
-  
-  this.sortItems(this.allergies.lat, this.allergies.lng);
-   
-   
-    
-}
-
-  
     
   
 ionViewWillEnter() {
 
-  this.counts  =[0,0,0,0,0,0,0,0,0,0,0];
-  this.countsReal =[0,0,0,0,0,0,0,0,0,0,0];
+  this.counts  =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  this.countsReal =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-
+  this.cardItems = this.items.query();
 
   for (let index = 0; index < this.cardItems.length; index++) {
     this.menuTypes[index] = this.getReviews('/' + this.cardItems[index].data );
+   
     this.menuTypes[index].subscribe(types => {
       this.types[index] = types as any;
      
@@ -92,20 +78,41 @@ ionViewWillEnter() {
       
      
       this.cardItems[index].percent = ((this.countsReal[index] / this.counts[index]) * 100).toFixed(0);
-      console.log(this.cardItems[index].percent);
+      console.log(this.cardItems[index].name +":" + this.cardItems[index].percent);
       this.sortItems(this.allergies.lat, this.allergies.lng);
+
+      
+     this.Cards = this.cardItems.slice().sort(this.percents);
+  
+          
+      
+     
+}
+
+
+);
+
+
 }
 
 
 
-); 
+
 }
+
+
+
+
+
+
+
+percents(a,b){
+
+
+
+    return b.percent - a.percent;
+     
 }
-
-
-
-
-
 
 
 getReviews(listPath): Observable<any[]> {
@@ -141,7 +148,7 @@ getReviews(listPath): Observable<any[]> {
   let usersLocation = {
     lat:  one,
     lng: two
-  }
+    }
 
   
   
@@ -167,11 +174,6 @@ getReviews(listPath): Observable<any[]> {
 
     */
 
-    this.cardItems.sort(function (a, b){
-
-
-      return b.percent - a.percent;
-    });
 
 
 

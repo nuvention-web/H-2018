@@ -9,64 +9,61 @@
 
   <ion-content class="card-detail-page">
 
-
-      <div class="heading">
-          {{item.name}}
-      </div>
+    <div class="header-pic">
 
 
-<div>
-<ion-grid>
-  
 
-  <ion-row>
-      <ion-col class="img">
-       
+
         <img [src]="item.profilePic" id="card-pic">
-       
 
-      </ion-col>
+        <div class="heading-new">
+            {{item.name}}
+        </div>
 
-      <ion-col class="col">
+        <div class="subheading">
+            {{item.address}} 
+        </div>
 
-          <div class="subtitle">
-              {{item.percent}} % of these menu items are safe to eat and highlighted in green. Unsafe menu items are highlighted in red.
-              </div>
 
-       
-
-             
-        </ion-col>
-    </ion-row>
-    <ion-row>
-  
+        <button ion-button id="but">
+            <ion-icon name='call'></ion-icon>
+            <a id="link" [href]="item.number">Call Restaurant</a>
+            </button>
             
-            <div class="button-holder">
 
-            <button ion-button color="secondary" small id="maps">
-               <ion-icon name='navigate'></ion-icon>
-               Open in Google Maps
-               
-             </button>
-          
-          
-        
-             <button ion-button color="secondary" id="but">
-                <ion-icon name='call'></ion-icon>
-                <a id="link" [href]="item.number">Call Restaurant</a>
-                </button>
+            <div class="round-star-label"></div>
+            <div class="percentage">
+              {{item.percent}} %
+             
+             
+            </div>
+
+            <div class="allergen-free">
+                allergen 
+                <br>
+                free
               </div>
- 
-    </ion-row>
-</ion-grid>
-    </div>
-    
-    
+     
+            <div class="warning"> <b> <p id="text">Please note that this information is only a guide. It is important to still declare 
+                your allergy information to your server.</p>
+              </b></div>
 
-    <div class="warning"> <b> <p id="text">Please note that this information is only a guide. It is important to still declare 
-      your allergy information to your server.</p>
-    </b></div>
-    
+              <div class="green">
+                  Green = free of allergens
+                </div>
+
+
+                <div class="red">
+                    Red = contains allergens
+                  </div>
+                
+              
+
+</div>
+
+
+
+   
 
         <ion-list class="accordion-list">
         
@@ -100,8 +97,10 @@
                   && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
                   && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE') ? 'safe' : 'unsafe'">
                       
+
+                  
                   <div class="itemdesc">
-                  <ion-icon class="star" *ngIf="cart.fav[index1][i][j] == true" name='star'> </ion-icon>
+                      <ion-icon class="star" *ngIf="cart.fav[index1][i][j] == true" name='star'> </ion-icon>
                     
                    {{ child.menuItem }}
                    
@@ -109,7 +108,46 @@
                   </div>
                     <p class="itemdesc" *ngIf="child.desc">
                       {{child.desc}}
-                    </p>
+
+                      </p>
+
+                      <p class="itemdesc" *ngIf="allergies.milk && child.milk == 'TRUE'">
+                        CONTAINS MILK
+                      </p>
+
+                      <p class="itemdesc" *ngIf="allergies.treenuts && child.treenuts == 'TRUE'">
+                          CONTAINS TREENUTS
+                        </p>
+
+                        <p  class="itemdesc" *ngIf="allergies.wheat && child.wheat == 'TRUE'">
+                            CONTAINS GLUTEN
+                          </p>
+
+                          <p  class="itemdesc" *ngIf="allergies.soy && child.soy == 'TRUE'">
+                              CONTAINS SOY
+                            </p>
+
+
+                            <p  class="itemdesc" *ngIf="allergies.fish && child.fish == 'TRUE'">
+                                CONTAINS FISH
+                              </p>
+
+                              <p  class="itemdesc" *ngIf="allergies.shellfish && child.shellfish == 'TRUE'">
+                                  CONTAINS SHELLFISH
+                                </p>
+
+                                <p  class="itemdesc" *ngIf="allergies.eggs && child.eggs == 'TRUE'">
+                                    CONTAINS EGGS
+                                  </p>
+
+                                  <p  class="itemdesc" *ngIf="allergies.peanuts && child.peanuts == 'TRUE'">
+                                      CONTAINS EGGS
+                                    </p>
+    
+  
+
+
+                    
                     
                     </button>
                  
