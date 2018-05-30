@@ -7,7 +7,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import { FirstRunPage } from '../pages/pages';
 
-import { AnalyticsProvider } from '../providers/analytics/analytics';
+
 
 
 
@@ -49,28 +49,21 @@ export class MyApp {
     { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor( public analyticsProvider: AnalyticsProvider, private ga: GoogleAnalytics, private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor( private ga: GoogleAnalytics, private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.initializeApp();
+   
     
 
    
   });
 }
 
-initializeApp() {
-  this.analyticsProvider.startTrackerWithId('UA-119350771-1');
-  this.nav.viewDidEnter.subscribe(
-    (view) => {
-      this.analyticsProvider.trackView(view.instance.constructor.name);
-    }
-  );
-}
+
   
  
 
