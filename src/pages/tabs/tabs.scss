@@ -438,11 +438,22 @@ page-tabs {
     top: 42%;
     left: 53%;
     background: rgb(248, 162, 50);
+    
 
     
    
     
     
+    
+}
+
+#yelp{
+    width: 45%;
+    padding: 18px;
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    background: rgb(248, 162, 50);  
     
 }
 
@@ -505,6 +516,19 @@ page-tabs {
     text-shadow: none;
     -webkit-transform: rotateZ(60deg)   ;
     transform: rotateZ(60deg)   ;
+  }
+
+  .restaurantdisc{
+
+    font-size: 12pt;
+    color: #fff;
+    position: relative;
+    background: rgba(254, 144, 4, 0.55);
+    text-align: center;
+    top: 6.75em;
+    padding: 10px;
+    text-shadow:  0.5px 1px 3px #000;
+
   }
 
 

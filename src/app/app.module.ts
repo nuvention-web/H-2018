@@ -26,7 +26,7 @@ import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {SocialSharing} from '@ionic-native/social-sharing';
 import {CallNumber} from '@ionic-native/call-number';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
-import { AnalyticsProvider } from '../providers/analytics/analytics';
+
 
 
 
@@ -92,7 +92,7 @@ export function provideSettings(storage: Storage) {
     
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    AnalyticsProvider,
+  
 
   ]
 })

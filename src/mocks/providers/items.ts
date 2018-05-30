@@ -19,7 +19,9 @@ export class Items {
         "lng": -87.6820016,
         "index": 0,
         "number" : "tel:+18473285400",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/lou-malnatis-pizzeria-evanston",
+        "disclaimer" : "Our deep dish pizza dough and pizza sauce do not contain any egg or dairy (just so long as you do not order Buttercrust and specify that you do not want romano cheese sprinkled on top). "
       },
       {
         "name": "Chipotle",
@@ -31,7 +33,9 @@ export class Items {
         "lng": -87.681222,
         "index": 1,
         "number": "tel:+18474253959",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/chipotle-mexican-grill-evanston",
+        "disclaimer": "Although we do not use eggs, mustard, peanuts, tree nuts, sesame, shellfish, or fish as ingredients in our food, Chipotle cannot guarantee the complete absence of these allergens in its restaurants."
 
       },
       {
@@ -44,7 +48,9 @@ export class Items {
         "lng": -87.678949,
         "index": 2,
         "number": "tel:+18473321625",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/la-cocinita-restaurant-evanston",
+        "disclaimer" : "We need a heads up if someone has a contact allergy; there's a separate fryer that we can use if we know there's a severe allergy."
       },
       {
         "name": "Dave's New Kitchen",
@@ -56,7 +62,9 @@ export class Items {
         "lng": -87.682534,
         "index": 3,
         "number": "tel:+18478646000",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/daves-new-kitchen-evanston",
+        "disclaimer" : "We make bread in house so there is flour in the air."
       },
       {
         "name": "Aloha Poke",
@@ -68,7 +76,9 @@ export class Items {
         "lng": -87.681215,
         "index": 4,
         "number": "tel:+12249997298",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/aloha-poke-evanston",
+        "disclaimer" : "This restaurant has no information to share."
       },
       {
         "name": "Naf Naf Grill",
@@ -80,7 +90,9 @@ export class Items {
         "lng": -87.680707,
         "index": 5,
         "number": "tel:+18478668470",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/naf-naf-grill-evanston-2",
+        "disclaimer" : "Naf Naf Grill does not guarantee that cross-contact with allergens will not occur. "
       },
       {
         "name": "Blaze Pizza",
@@ -92,7 +104,9 @@ export class Items {
         "lng": -87.681572,
         "index": 6,
         "number": "tel:+18472649263",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/blaze-fast-fired-pizza-evanston-2",
+        "disclaimer" : "This restaurant has no information to share."
       },
       {
         "name": "Frontera Fresco",
@@ -104,7 +118,9 @@ export class Items {
         "lng": -87.672955,
         "index": 7,
         "number": "tel:+18474912300",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/frontera-fresco-evanston",
+        "disclaimer" : " While we take steps to minimize the risk of cross contamination, we cannot guarantee that any of our products are always safe to consume"
       },
       {
         "name": "Boltwood",
@@ -116,7 +132,9 @@ export class Items {
         "lng": -87.682288,
         "index": 8,
         "number": "tel:+18478592880",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/boltwood-evanston",
+        "disclaimer" : "We make bread in house so there is flour in the air."
       },
       {
         "name": "Panera Bread",
@@ -128,7 +146,9 @@ export class Items {
         "lng": -87.682202,
         "index": 9,
         "number": "tel:+18477338356",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/panera-bread-evanston",
+        "disclaimer" : "Please note that we cannot guarantee that any of our menu items are free of allergens because we use shared equipment and handle common allergens throughout our supply chain."
       },
       {
         "name": "Bat 17",
@@ -140,7 +160,9 @@ export class Items {
         "lng": -87.683107,
         "index": 10,
         "number": "tel:+18477337117",
-        "percent": 0
+        "percent": 0,
+        "yelp": "https://www.yelp.com/biz/bat-17-evanston",
+        "disclaimer" : "We take care not to cross contaminate and we use fresh pans and knives for orders with noted allergy issues."
       },
 
      

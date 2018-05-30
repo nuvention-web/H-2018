@@ -29,6 +29,14 @@
             <ion-icon name='call'></ion-icon>
             <a id="link" [href]="item.number">Call Restaurant</a>
             </button>
+
+
+            <button ion-button id="yelp">
+                <ion-icon name='logo-hackernews'></ion-icon>
+                <a id="link" [href]="item.yelp">Yelp Page</a>
+                </button>
+
+
             
 
             <div class="round-star-label"></div>
@@ -61,7 +69,13 @@
 
 </div>
 
+<div class="restaurantdisc">
+  Message from the restaurant:
+<br>
+<br>
+  {{item.disclaimer}}
 
+</div>
 
    
 
@@ -111,37 +125,47 @@
 
                       </p>
 
+
                       <p class="itemdesc" *ngIf="allergies.milk && child.milk == 'TRUE'">
+                        <br>
+                        
                         CONTAINS MILK
                       </p>
 
                       <p class="itemdesc" *ngIf="allergies.treenuts && child.treenuts == 'TRUE'">
-                          CONTAINS TREENUTS
+                          <br>
+                        CONTAINS TREENUTS
                         </p>
 
                         <p  class="itemdesc" *ngIf="allergies.wheat && child.wheat == 'TRUE'">
-                            CONTAINS GLUTEN
+                            <br>
+                          CONTAINS GLUTEN
                           </p>
 
                           <p  class="itemdesc" *ngIf="allergies.soy && child.soy == 'TRUE'">
-                              CONTAINS SOY
+                              <br>
+                            CONTAINS SOY
                             </p>
 
 
                             <p  class="itemdesc" *ngIf="allergies.fish && child.fish == 'TRUE'">
-                                CONTAINS FISH
+                                <br>
+                              CONTAINS FISH
                               </p>
 
                               <p  class="itemdesc" *ngIf="allergies.shellfish && child.shellfish == 'TRUE'">
-                                  CONTAINS SHELLFISH
+                                  <br>
+                                CONTAINS SHELLFISH
                                 </p>
 
                                 <p  class="itemdesc" *ngIf="allergies.eggs && child.eggs == 'TRUE'">
-                                    CONTAINS EGGS
+                                    <br>
+                                  CONTAINS EGGS
                                   </p>
 
                                   <p  class="itemdesc" *ngIf="allergies.peanuts && child.peanuts == 'TRUE'">
-                                      CONTAINS EGGS
+                                      <br>
+                                    CONTAINS EGGS
                                     </p>
     
   

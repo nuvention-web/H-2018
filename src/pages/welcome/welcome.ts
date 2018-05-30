@@ -20,14 +20,12 @@ export class WelcomePage {
 
     this.a.start = true;
 
-   /* this.ga.startTrackerWithId('UA-119350771-1')
+    this.ga.startTrackerWithId('UA-119666607-1')
       .then(() => {
         console.log('Google analytics is ready now');
         this.ga.trackView('home');
       })
       .catch(e => console.log('Error starting GoogleAnalytics', e));
-
-      */
   
    }
 
