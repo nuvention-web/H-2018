@@ -164,6 +164,19 @@ export class Items {
         "yelp": "https://www.yelp.com/biz/bat-17-evanston",
         "disclaimer" : "We take care not to cross contaminate and we use fresh pans and knives for orders with noted allergy issues."
       },
+      {
+        "name": "Heckey's Barbecue",
+        "profilePic": "https://image.ibb.co/d1Cqa8/bensbbqthumb.png",
+        "about": "Long-standing, popular spot for barbecue fare.",
+        "data": "heckeys",
+        "address": "1902 Green Bay Rd, Evanston, IL 60201",
+        "index": 11,
+        "number": "tel:+18474921182",
+        "percent": "???",
+        "yelp": "https://www.yelp.com/biz/heckys-barbecue-evanston",
+        "fake": true,
+      },
+
 
      
     ];
