@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
-import { FirstRunPage } from '../pages/pages';
+import { FirstRunPage, ListPage } from '../pages/pages';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 
@@ -46,7 +47,8 @@ export class MyApp {
     { title: 'Menu', component: 'MenuPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'List', component: 'ListPage' },
-    { title: 'Search', component: 'SearchPage' }
+    { title: 'Search', component: 'SearchPage' },
+  
   ]
 
   constructor( private ga: GoogleAnalytics, private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
@@ -61,7 +63,15 @@ export class MyApp {
 
    
   });
+
+
+ 
+
+
+
+
 }
+
 
 
   

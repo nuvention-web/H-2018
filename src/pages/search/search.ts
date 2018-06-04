@@ -5,12 +5,17 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 declare var google;
 
 
-@IonicPage()
+@IonicPage(
+  /*{name: 'SearchPage',
+segment: 'map'
+}
+*/)
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html'
@@ -69,6 +74,7 @@ export class SearchPage {
   }
 
   addInfoWindowToMarker(marker) {
+    
     var infoWindowContent = '<div id="content" style="width:125px"><h1 id="firstHeading" class="firstHeading">' + marker.title  +'</h1>' + '<p>' + marker.about + '</p></div>';
     var infoWindow = new google.maps.InfoWindow({
       content: infoWindowContent

@@ -7,10 +7,14 @@ import { Reviews } from '../../providers/providers';
 import { Geolocation } from '@ionic-native/geolocation';
 import {AllegensProvider} from '../../providers/allegens/allegens';
 import { AngularFireDatabase, AngularFireAction } from 'angularfire2/database'; 
+import { TabsPage } from '../tabs/tabs';
+import { Storage } from '@ionic/storage';
 
 
 
-@IonicPage()
+@IonicPage({name: 'CardsPage',
+segment: 'cards-list'
+})
 @Component({
   selector: 'page-cards',
   templateUrl: 'cards.html'
@@ -29,8 +33,9 @@ export class CardsPage {
 
 
 
-  constructor(private db: AngularFireDatabase, public allergies: AllegensProvider, private geolocation: Geolocation, public navCtrl: NavController, public items: Items, public reviews: Reviews, public modalCtrl: ModalController) {
+  constructor(public storage: Storage, private db: AngularFireDatabase, public allergies: AllegensProvider, private geolocation: Geolocation, public navCtrl: NavController, public items: Items, public reviews: Reviews, public modalCtrl: ModalController) {
     this.cardItems = this.items.query();
+    
     
   }
 
@@ -44,14 +49,14 @@ ionViewWillEnter() {
 
   this.cardItems = this.items.query();
 
-  for (let index = 0; index < this.cardItems.length; index++) {
+  for (let index = 0; index < this.cardItems.length - 1; index++) {
     this.menuTypes[index] = this.getReviews('/' + this.cardItems[index].data );
    
     this.menuTypes[index].subscribe(types => {
       this.types[index] = types as any;
      
       for (let i = 0; i < types.length; i++) {
-        for (let j = 0; j < types[i].children.length; j++) {
+        for (let j = 0; j < types[i].children.length-1; j++) {
 
         if(types[i].children[j].menuItem)
         {
@@ -82,11 +87,12 @@ ionViewWillEnter() {
       this.sortItems(this.allergies.lat, this.allergies.lng);
 
       
+
+
+
      this.Cards = this.cardItems.slice().sort(this.percents);
-  
-          
       
-     
+
 }
 
 
@@ -97,10 +103,7 @@ ionViewWillEnter() {
 
 
 
-
 }
-
-
 
 
 
@@ -125,9 +128,25 @@ getReviews(listPath): Observable<any[]> {
 
   
   openItem(item: Item) {
+
+    if(item.fake == true)
+    {
+
+      this.navCtrl.push('FakePage', {
+        item: item,
+        id: item.name
+      });
+
+    }else{
+
+    
+    this.storage.set('name', item).then( any => 
     this.navCtrl.push('CardDetailPage', {
-      item: item
-    });
+      item: item,
+      id: item.name
+    }));
+  }
+    
   }
 
 

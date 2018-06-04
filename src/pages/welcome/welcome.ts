@@ -3,6 +3,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 import {AllegensProvider} from '../../providers/allegens/allegens';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { MyApp } from '../../app/app.component';
+import { TabsPage } from '../tabs/tabs';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -16,8 +18,8 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 })
 export class WelcomePage {
 
-  constructor(public ga: GoogleAnalytics, public a: AllegensProvider, public navCtrl: NavController) {
-
+  constructor(public c: MyApp, public ga: GoogleAnalytics, public a: AllegensProvider, public navCtrl: NavController) {
+    this.c.openPage(TabsPage);
     this.a.start = true;
 
     this.ga.startTrackerWithId('UA-119666607-1')

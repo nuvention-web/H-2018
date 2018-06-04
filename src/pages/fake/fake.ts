@@ -13,30 +13,22 @@ import { CallNumber } from '@ionic-native/call-number';
 import {TabsPage}  from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
 import {CardsPage} from '../cards/cards'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+/**
+ * Generated class for the FakePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
- 
-
-@IonicPage(
-  
-  {name: 'CardDetailPage',
-segment: 'cardsd/:id'
-
-}
-
-
-)
-
-
+@IonicPage()
 @Component({
-  selector: 'card-detail',
-  templateUrl: 'card-detail.html',
+  selector: 'page-fake',
+  templateUrl: 'fake.html',
 })
+export class FakePage {
 
-
-export class CardDetailPage {
-
-  
   item: any;
   review: any;
   show: boolean[];
@@ -47,33 +39,37 @@ export class CardDetailPage {
   
   
  
-
+reviewForm: FormGroup;
 
   currentReviews: Item[];
   reviewsObservable: Observable<any[]>;
   menuTypes: Observable<any[]>;
   information: any[];
-  
+  isReadyToSave: boolean;
 
-  constructor(public storage: Storage, private callNumber: CallNumber, public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, public navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
-    
-   
+  constructor(private fb: FormBuilder, formBuilder: FormBuilder, public storage: Storage, private callNumber: CallNumber, public cart:Cart, public allergies :AllegensProvider, private http: HttpClient, public navCtrl: NavController,  private db: AngularFireDatabase, public navParams: NavParams, public reviews: Reviews, public items: Items, public modalCtrl: ModalController) {
 
     this.item = navParams.get('item') || reviews.defaultReview;
     this.currentReviews = this.reviews.query();
     this.index1 = this.item.index;
-   
-  
-  
 
-  
-   
+
+    this.reviewForm = formBuilder.group({
+       name: ['', Validators.required],
+       email: ['', Validators.required],
+      details: ['', Validators.required]});
+
+      this.reviewForm.valueChanges.subscribe((v) => {
+        this.isReadyToSave = this.reviewForm.valid;
+      });
     
     
   }
 
 
-  
+  done(){
+    this.navCtrl.push(TabsPage);
+  }
 
 
 
@@ -105,18 +101,7 @@ export class CardDetailPage {
 
 
 
-  shower(i){
-    this.show[i] = !this.show[i];
-  }
 
-
-
- 
-  toggleSection(i) {
-   
-    this.information[i].open = !this.information[i].open;
-  }
- 
 
 
 
@@ -136,33 +121,12 @@ export class CardDetailPage {
 
 
 
-  addReview() {
-    this.navCtrl.push('ReviewCreatePage', {
-      item1: this.item.data,
-    });
-  }
-
-
-  addToCart(item, i, j) {
-
-    
-    let fav = this.item.name + " - " + item;
-    let index = this.cart.cart.indexOf(fav);
-    //item.checked=false;
-    if (index == -1 ) {
-      this.cart.cart.push(fav);
-      this.cart.fav[this.index1][i][j] = !this.cart.fav[this.index1][i][j];
-    }
-    else{
-    this.cart.cart.splice(index, 1);
-    this.cart.fav[this.index1][i][j] = !this.cart.fav[this.index1][i][j];
-    }
-   
-   
-  }
 
   
 
  
+
+
+
 
 }

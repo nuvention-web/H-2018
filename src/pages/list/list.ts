@@ -12,8 +12,9 @@ import {AllegensProvider} from '../../providers/allegens/allegens';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
-@Component({
+@IonicPage( )
+@Component(
+  {
   selector: 'page-list',
   templateUrl: 'list.html',
 })
@@ -43,6 +44,7 @@ export class ListPage {
   done(){
    
   this.navCtrl.push(MainPage);
+  
    
   }
 

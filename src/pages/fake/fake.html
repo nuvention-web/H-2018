@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+          </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+
+  <ion-content class="card-detail-page">
+
+    <div class="header-pic">
+
+
+
+
+        <img [src]="item.profilePic" id="card-pic">
+
+        <div class="heading-new">
+            {{item.name}}
+        </div>
+
+        <div class="subheading">
+            {{item.address}} 
+        </div>
+
+
+        <button ion-button id="but">
+            <ion-icon name='call'></ion-icon>
+            <a id="link" [href]="item.number">Call Restaurant</a>
+            </button>
+
+
+            <button ion-button id="yelp">
+                <ion-icon name='logo-hackernews'></ion-icon>
+                <a id="link" [href]="item.yelp">Yelp Page</a>
+                </button>
+
+</div>
+
+<div class="restaurantdisc1">
+  Want to see an allergen-filtered menu?
+
+  Let the restaurant know that they should submit their information to Pallergy.
+
+</div>
+
+<form [formGroup]="reviewForm" >
+    
+  
+    <ion-list>
+     <ion-item>
+        <ion-input type="text" placeholder="Enter Name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-input type="text" placeholder="Enter Email" formControlName="email"></ion-input>
+        </ion-item>
+
+    
+      <ion-item>
+        <ion-textarea rows="2" type="text" placeholder="Enter Allergens" formControlName="details"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    
+    <button ion-button (click)="done()" [disabled]="!isReadyToSave" block color="secondary">
+        Submit
+      </button>
+  </form>
+
+</ion-content>
