@@ -8,7 +8,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
  * to enable the user to customize settings for the app.
  *
  */
-@IonicPage()
+@IonicPage({name: 'SettingsPage',
+segment: 'settings'
+})
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html'
@@ -22,7 +24,7 @@ export class SettingsPage {
   
 updateAllergens()
 {
-  this.navCtrl.push(ListPage);
+  this.navCtrl.push('ListPage');
 }
 
 
