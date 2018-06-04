@@ -12,7 +12,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({name: 'FavsPage',
+segment: 'favs'
+})
 @Component({
   selector: 'page-favs',
   templateUrl: 'favs.html',

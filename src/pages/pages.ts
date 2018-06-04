@@ -10,3 +10,6 @@ export const Tab1Root = 'CardsPage';
 export const Tab2Root = 'SearchPage';
 export const Tab3Root = 'SettingsPage';
 export const Tab4Root = 'FavsPage';
+
+
+export const ListPage = 'ListPage';
