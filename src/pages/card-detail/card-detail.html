@@ -110,8 +110,17 @@
                   && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
                   && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
                   && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE') ? 'safe' : 'unsafe'">
-                      
+                     
+                  <div *ngIf="!(!(allergies.wheat && child.wheat == 'TRUE') && !(allergies.peanuts && child.peanuts == 'TRUE') 
+                  && !(allergies.treenuts && child.treenuts == 'TRUE') && !(allergies.soy && child.soy == 'TRUE')
+                  && !(allergies.milk && child.milk == 'TRUE') && !(allergies.eggs && child.eggs == 'TRUE')
+                  && !(allergies.shellfish && child.shellfish == 'TRUE') && !(allergies.fish && child.fish == 'TRUE'))">
+                
+                <img src="../assets/img/no.png" width="25px" height="25px">
+                </div>
+                  
 
+                  
                   
                   <div class="itemdesc">
                       <ion-icon class="star" *ngIf="cart.fav[index1][i][j] == true" name='star'> </ion-icon>
