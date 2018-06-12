@@ -1,8 +1,9 @@
 
 # H-2018
 
-Instructions to run:
+Instructions to run Pallergy:
 - Visit www.mypallergy.com on a mobile device. (or Google Chrome in mobile view)
+- If running on an iPhone, tap the share icon and then share to homescreen to run as a PWA.
 
 
 Alternatively,
