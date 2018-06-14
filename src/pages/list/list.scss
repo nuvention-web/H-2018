@@ -1,0 +1,43 @@
+page-list {
+    .card-detail-page{
+    background: url("../assets/img/back-min.png") no-repeat center;
+    background-size: cover;
+    }
+
+    .list1{
+        background: rgba(254, 144, 4, 0.4);
+        color: white;
+        font-size: 12pt;
+        text-shadow: 0 0 4px rgb(0, 0, 0);
+    }
+
+    .list2{
+        background: rgba(250, 191, 82, 0.4);
+        color: white;
+        font-size: 12pt;
+        text-shadow: 0 0 4px rgb(0, 0, 0);
+    }
+
+    .disc{
+        color: black;
+        text-shadow: 0 0 10px rgb(255, 255, 255);
+        text-align: center;
+        font-size: 11px;
+        top: 3%;
+        position: relative;
+        background: rgba(253, 203, 102, 0.5);
+    }
+
+    .heading{
+
+        font-size: 26px;
+        font-weight: bold;
+        max-width: 80%;
+        margin: auto;
+        color: #fff;
+        text-shadow: 0 0 4px rgb(0, 0, 0);
+        text-align: center;
+        padding: 0.25em;
+    
+    }
+}

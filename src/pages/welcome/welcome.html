@@ -1,13 +1,46 @@
-<ion-content scroll="false">
-  <div class="splash-bg"></div>
-  <div class="splash-info">
-    <div class="splash-logo"></div>
-    <div class="splash-intro">
-      Welcome to Pallergy
-    </div>
+<ion-content scroll="false" class = "master">
+ <div>
+<div style="padding-top: 5em;" class="splash-logo"></div>
+</div>
+
+
+
+    <div style="padding-top: 2em;" class="splash-intro">
+    Find food that won't hurt you
   </div>
-  <div padding>
-    <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
+
+
+  <br>
+  <br>
+
+  <div class="viewing">
+    Pallergy is best viewed outside of the browser
+<br>
+<br>
+    Click 
+    <ion-icon name="ios-share-outline"></ion-icon>
+    then 'Add to Home Screen'
+  </div>
+
+
+
+  <div style="padding-top: 6em;">
+   <!-- <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
     <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+   -->
+ 
+   <button id="getstarted" ion-button block color="secondary" (click)="getStarted()">Get Started</button>
   </div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119666607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119666607-1');
+</script>
+
+  
 </ion-content>

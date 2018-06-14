@@ -1,45 +1,25 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ pageTitle }}</ion-title>
+  <ion-navbar hideBackButton="true">
+    <ion-title>
+      <img src="../assets/img/logo-new.png" width="40px" style="display:inline-block" height="40px"/>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content>
+<ion-content class="card-detail-page">
+<div class="heading">Settings</div>
 
-  <form [formGroup]="form" *ngIf="settingsReady">
-    <ion-list *ngIf="page == 'main'">
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
-        <ion-toggle formControlName="option1"></ion-toggle>
-      </ion-item>
+<ion-list class="settings">
+  <button ion-item class="setting" (click)="updateAllergens()">
+    Update allergens
+  </button>
+<br>
+  <button ion-item  class="setting" onclick="window.open('https://mypallergy.carrd.co/', 'height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')">
+      Join our mailing list
+    </button>
 
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION2' | translate }}</ion-label>
-        <ion-input formControlName="option2"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION3' | translate }}</ion-label>
-        <ion-select formControlName="option3">
-          <ion-option value="1" checked="true">1</ion-option>
-          <ion-option value="2">2</ion-option>
-          <ion-option value="3">3</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
-        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
-      </button>
-    </ion-list>
-
-    <ion-list *ngIf="page == 'profile'">
-      <ion-item>
-        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
-        <ion-input formControlName="option4"></ion-input>
-      </ion-item>
-    </ion-list>
-  </form>
+  </ion-list>
 
 </ion-content>

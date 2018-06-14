@@ -1,12 +1,9 @@
 page-welcome {
-  .splash-bg {
-    position: relative;
-    background: url('../assets/img/b.jpg') no-repeat transparent;
+ 
+
+  .master{
+    background: url("../assets/img/pic1.png") no-repeat center;
     background-size: cover;
-    height: 45%;
-    z-index: 1;
-    background-repeat: repeat-x;
-    animation: animatedBackground 40s linear infinite;
   }
 
   @keyframes animatedBackground {
@@ -22,17 +19,53 @@ page-welcome {
   }
   .splash-logo {
     margin: auto;
-    background: url('../assets/img/logo.png') repeat transparent;
+    background: url('../assets/img/logo-new.png') repeat transparent;
     background-size: 100%;
-    width: 128px;
-    height: 128px;
+    width: 300px;
+    height: 300px;
+    padding-top: 5em;
+
   }
   .splash-intro {
-    font-size: 18px;
+    text-align: center;
+    font-size: 25px;
     font-weight: bold;
-    max-width: 80%;
     margin: auto;
+    color: #fff;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
   }
+
+  #getstarted{
+    width: 70%;
+    margin: auto;
+  
+  }
+
+.viewing{
+
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  color: #fff;
+  width: 90%;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
   button.login {
     margin-top: 25px;
     background-color: white;
