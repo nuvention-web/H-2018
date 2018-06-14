@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Item } from '../../models/item';
-import { Api } from '../api/api';
+import { Item } from '../models/item';
+import { Api } from '../providers/api/api'
 
 @Injectable()
 export class Reviews {
